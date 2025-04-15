@@ -1,6 +1,7 @@
 #include "raylib.h"
 
 #include "config.h"
+#include "screens/main_menu.h"
 
 int main(void)
 {
@@ -9,6 +10,9 @@ int main(void)
     while (!WindowShouldClose())
     {
         BeginDrawing();
+
+        ClearBackground(BLACK);
+        DrawMainMenu();
 
         EndDrawing();
     }
