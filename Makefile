@@ -1,8 +1,10 @@
 CC=gcc
+CFLAGS=-Iinclude
+LDFLAGS= -lraylib -lm
 
 build:
 	mkdir -p ./build
-	$(CC) ./src/main.c -o ./build/game
+	$(CC) $(CFLAGS) ./src/main.c -o ./build/game $(LDFLAGS)
 
 run: build
 	./build/game
