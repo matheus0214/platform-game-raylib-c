@@ -1,6 +1,19 @@
-#include <stdio.h>
+#include "raylib.h"
 
-int main(void) {
-    printf("Hello\n");
+#include "config.h"
+
+int main(void)
+{
+    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Platform Game");
+
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+
     return 0;
 }
