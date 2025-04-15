@@ -1,10 +1,11 @@
 CC=gcc
 CFLAGS=-Iinclude
 LDFLAGS= -lraylib -lm
+SRC=$(shell find src -name '*.c')
 
 build:
 	mkdir -p ./build
-	$(CC) $(CFLAGS) ./src/main.c -o ./build/game $(LDFLAGS)
+	$(CC) $(CFLAGS) $(SRC) -o ./build/game $(LDFLAGS)
 
 run: build
 	./build/game
