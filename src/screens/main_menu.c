@@ -1,6 +1,7 @@
 #include "raylib.h"
 
 #include "config.h"
+#include "assets.h"
 #include "screens/main_menu.h"
 
 const char *menu_text = "Press ENTER to start the game";
@@ -21,10 +22,10 @@ void DrawMainMenu(void)
                    WHITE);
 
     const int textWidth = MeasureText(menu_text, font_size);
-    const int x = (GetScreenWidth() - textWidth) / 2;
+    const int x = (GetScreenWidth() - textWidth) / 3;
     const int y = GetScreenHeight() / 2;
 
-    DrawText(menu_text, x, y, 40, BLUE);
+    DrawTextEx(font, menu_text, (Vector2){x, y}, 30, 3,WHITE);
 }
 
 void UnloadMainMenu(void) {

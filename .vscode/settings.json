@@ -2,6 +2,7 @@
     "files.associations": {
         "raylib.h": "c",
         "config.h": "c",
-        "main_menu.h": "c"
+        "main_menu.h": "c",
+        "assets.h": "c"
     }
 }
