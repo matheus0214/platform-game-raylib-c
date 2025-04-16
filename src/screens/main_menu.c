@@ -4,12 +4,14 @@
 #include "assets.h"
 #include "screens/main_menu.h"
 
-const char *menu_text = "Press ENTER to start the game";
+const char *menu_text = "Start";
 const int font_size = 40;
 static Texture2D background;
+static Texture2D button_red;
 
 void InitMainMenu(void) {
     background = LoadTexture("assets/background.png");
+    button_red = LoadTexture("assets/ui/button-red.png");
 }
 
 void DrawMainMenu(void)
@@ -21,13 +23,17 @@ void DrawMainMenu(void)
                    0,
                    WHITE);
 
-    const int textWidth = MeasureText(menu_text, font_size);
-    const int x = (GetScreenWidth() - textWidth) / 3;
-    const int y = GetScreenHeight() / 2;
-
-    DrawTextEx(font, menu_text, (Vector2){x, y}, 30, 3,WHITE);
+    const int button_x = (GetScreenWidth() - button_red.width) / 2.0f;
+    const int button_y = (GetScreenHeight() - button_red.height) / 2.0f;
+    
+    DrawTexturePro(button_red, 
+        (Rectangle){0, 0, 270, 96}, 
+        (Rectangle){button_x, button_y, 230, 86}, 
+        (Vector2){0, 0}, 0, WHITE);
+    DrawTextEx(font, menu_text, (Vector2){button_x + 48, button_y + 30}, 32, 3,WHITE);
 }
 
 void UnloadMainMenu(void) {
     UnloadTexture(background);
+    UnloadTexture(button_red);
 }
