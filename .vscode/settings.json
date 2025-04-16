@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "raylib.h": "c"
+        "raylib.h": "c",
+        "config.h": "c",
+        "main_menu.h": "c"
     }
 }
