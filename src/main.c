@@ -2,6 +2,7 @@
 #include "stdio.h"
 
 #include "config.h"
+#include "assets.h"
 #include "screens/main_menu.h"
 
 void handleScreens(int screen);
@@ -14,9 +15,8 @@ int main(void)
 
     int currentScreen = SCREEN_MAIN_MENU;
 
+    LoadTexturesAssets();
     InitMainMenu();
-
-    Texture2D mouse = LoadTexture("assets/cursor_pointer.png");
 
     while (!WindowShouldClose())
     {
@@ -25,14 +25,15 @@ int main(void)
         BeginDrawing();
 
         ClearBackground(BLACK);
-        
+
         renderScreens(currentScreen);
         drawMouseImage(mouse);
 
         EndDrawing();
     }
 
-    UnloadTexture(mouse);
+    UnloadTexturesAssets();
+
     CloseWindow();
 
     return 0;
