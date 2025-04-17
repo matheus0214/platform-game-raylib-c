@@ -3,6 +3,7 @@
 
 void InitMainMenu(void);
 void DrawMainMenu(void);
+void DrawStartButton(void);
 void UnloadMainMenu(void);
 
 #endif
