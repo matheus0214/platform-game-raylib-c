@@ -3,6 +3,7 @@
 
 #include "configs/config.h"
 #include "screens/main_menu.h"
+#include "screens/screens.h"
 #include "utils/assets.h"
 
 void handleScreens(int screen);
@@ -11,8 +12,6 @@ void drawMouseImage(Texture2D mouse);
 
 int main(void) {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Platform Game");
-
-    int currentScreen = SCREEN_MAIN_MENU;
 
     LoadTexturesAssets();
     InitMainMenu();

@@ -3,10 +3,9 @@
 #include "screens/main_menu.h"
 
 #include <raylib.h>
-#include <stdio.h>
 
+#include "screens/screens.h"
 #include "utils/assets.h"
-#include "utils/collide.h"
 
 const char *menu_text = "Start";
 const int font_size = 40;
@@ -31,10 +30,11 @@ void DrawStartButton(void) {
     const int button_y = (GetScreenHeight() - button_red.height) / 2.0f;
     const Rectangle button_rect_pos = (Rectangle){button_x, button_y, 230, 86};
 
-    if (CursorCollide(button_rect_pos)) {
-        printf("Collide\n");
-    } else {
-        printf("Not collide\n");
+    Vector2 mouse_point = GetMousePosition();
+
+    if (CheckCollisionPointRec(mouse_point, button_rect_pos) &&
+        IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
+        ChangeScreen(LEVEL_1);
     }
 
     DrawTexturePro(button_red, (Rectangle){0, 0, 270, 96}, button_rect_pos,
