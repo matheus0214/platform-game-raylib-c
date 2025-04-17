@@ -1,10 +1,12 @@
+// Copyright 2025 Matheus G. Dias
+
 #include "screens/main_menu.h"
 
+#include <raylib.h>
 #include <stdio.h>
 
-#include "assets.h"
-#include "collide.h"
-#include "raylib.h"
+#include "utils/assets.h"
+#include "utils/collide.h"
 
 const char *menu_text = "Start";
 const int font_size = 40;

@@ -1,7 +1,9 @@
-#include "assets.h"
-#include "config.h"
-#include "raylib.h"
+// Copyright 2025 Matheus G. Dias
+#include <raylib.h>
+
+#include "configs/config.h"
 #include "screens/main_menu.h"
+#include "utils/assets.h"
 
 void handleScreens(int screen);
 void renderScreens(int screen);

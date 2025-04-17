@@ -1,7 +1,8 @@
-#include "raylib.h"
+// Copyright 2025 Matheus G. Dias
 
-#include "assets.h"
+#include "utils/assets.h"
 
+#include <raylib.h>
 
 Texture2D mouse;
 Font font;
