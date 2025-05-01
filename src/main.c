@@ -2,9 +2,11 @@
 #include <raylib.h>
 
 #include "configs/config.h"
+#include "screens/level_1.h"
 #include "screens/main_menu.h"
 #include "screens/screens.h"
 #include "utils/assets.h"
+#include "player/player.h"
 
 void handleScreens(int screen);
 void renderScreens(int screen);
@@ -15,6 +17,8 @@ int main(void) {
 
     LoadTexturesAssets();
     InitMainMenu();
+
+    InitPlayer();
 
     while (!WindowShouldClose()) {
         handleScreens(currentScreen);
@@ -29,6 +33,7 @@ int main(void) {
         EndDrawing();
     }
 
+    UnloadPlayer();
     UnloadTexturesAssets();
 
     CloseWindow();
@@ -51,6 +56,9 @@ void renderScreens(int screen) {
     switch (screen) {
         case SCREEN_MAIN_MENU:
             DrawMainMenu();
+            break;
+        case LEVEL_1:
+            DrawLevel_1();
             break;
         default:
             break;
